@@ -1,0 +1,1196 @@
+        Output file describing compiled parser placed in Parser.fs and Parser.fsi
+------------------------
+states = 
+state 0:  items:    _startProg ->  . Prog
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Prog: 1
+    goto Exp: 2
+state 1:  items:    _startProg -> Prog . 
+  actions:    action 'EOF' (noprec):   accept
+    action 'LET' (noprec):   accept
+    action 'IN' (noprec):   accept
+    action 'SUM' (noprec):   accept
+    action 'PROD' (noprec):   accept
+    action 'MAX' (noprec):   accept
+    action 'ARGMAX' (noprec):   accept
+    action 'TO' (noprec):   accept
+    action 'OF' (noprec):   accept
+    action 'TIMES' (noprec):   accept
+    action 'PLUS' (noprec):   accept
+    action 'MINUS' (noprec):   accept
+    action 'LPAR' (noprec):   accept
+    action 'RPAR' (noprec):   accept
+    action 'EQ' (noprec):   accept
+    action 'VAR' (noprec):   accept
+    action 'INT' (noprec):   accept
+    action 'error' (noprec):   accept
+    action '#' (noprec):   accept
+    action '$$' (noprec):   accept
+  immediate action:   accept  gotos:state 2:  items:    Prog -> Exp . 'EOF'
+    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+  actions:    action 'EOF' (noprec):   shift 3
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 3:  items:    Prog -> Exp 'EOF' . 
+  actions:    action 'EOF' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'LET' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'IN' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'SUM' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'PROD' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'MAX' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'ARGMAX' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'TO' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'OF' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'TIMES' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'PLUS' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'MINUS' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'LPAR' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'RPAR' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'EQ' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'VAR' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'INT' (noprec):   reduce Prog --> Exp 'EOF'
+    action 'error' (noprec):   reduce Prog --> Exp 'EOF'
+    action '#' (noprec):   reduce Prog --> Exp 'EOF'
+    action '$$' (noprec):   reduce Prog --> Exp 'EOF'
+  immediate action:   reduce Prog --> Exp 'EOF'  gotos:state 4:  items:    Exp -> 'INT' . 
+  actions:    action 'EOF' (noprec):   reduce Exp --> 'INT'
+    action 'LET' (noprec):   reduce Exp --> 'INT'
+    action 'IN' (noprec):   reduce Exp --> 'INT'
+    action 'SUM' (noprec):   reduce Exp --> 'INT'
+    action 'PROD' (noprec):   reduce Exp --> 'INT'
+    action 'MAX' (noprec):   reduce Exp --> 'INT'
+    action 'ARGMAX' (noprec):   reduce Exp --> 'INT'
+    action 'TO' (noprec):   reduce Exp --> 'INT'
+    action 'OF' (noprec):   reduce Exp --> 'INT'
+    action 'TIMES' (noprec):   reduce Exp --> 'INT'
+    action 'PLUS' (noprec):   reduce Exp --> 'INT'
+    action 'MINUS' (noprec):   reduce Exp --> 'INT'
+    action 'LPAR' (noprec):   reduce Exp --> 'INT'
+    action 'RPAR' (noprec):   reduce Exp --> 'INT'
+    action 'EQ' (noprec):   reduce Exp --> 'INT'
+    action 'VAR' (noprec):   reduce Exp --> 'INT'
+    action 'INT' (noprec):   reduce Exp --> 'INT'
+    action 'error' (noprec):   reduce Exp --> 'INT'
+    action '#' (noprec):   reduce Exp --> 'INT'
+    action '$$' (noprec):   reduce Exp --> 'INT'
+  immediate action:   reduce Exp --> 'INT'  gotos:state 5:  items:    Exp -> 'VAR' . 
+  actions:    action 'EOF' (noprec):   reduce Exp --> 'VAR'
+    action 'LET' (noprec):   reduce Exp --> 'VAR'
+    action 'IN' (noprec):   reduce Exp --> 'VAR'
+    action 'SUM' (noprec):   reduce Exp --> 'VAR'
+    action 'PROD' (noprec):   reduce Exp --> 'VAR'
+    action 'MAX' (noprec):   reduce Exp --> 'VAR'
+    action 'ARGMAX' (noprec):   reduce Exp --> 'VAR'
+    action 'TO' (noprec):   reduce Exp --> 'VAR'
+    action 'OF' (noprec):   reduce Exp --> 'VAR'
+    action 'TIMES' (noprec):   reduce Exp --> 'VAR'
+    action 'PLUS' (noprec):   reduce Exp --> 'VAR'
+    action 'MINUS' (noprec):   reduce Exp --> 'VAR'
+    action 'LPAR' (noprec):   reduce Exp --> 'VAR'
+    action 'RPAR' (noprec):   reduce Exp --> 'VAR'
+    action 'EQ' (noprec):   reduce Exp --> 'VAR'
+    action 'VAR' (noprec):   reduce Exp --> 'VAR'
+    action 'INT' (noprec):   reduce Exp --> 'VAR'
+    action 'error' (noprec):   reduce Exp --> 'VAR'
+    action '#' (noprec):   reduce Exp --> 'VAR'
+    action '$$' (noprec):   reduce Exp --> 'VAR'
+  immediate action:   reduce Exp --> 'VAR'  gotos:state 6:  items:    Exp -> 'LPAR' . Exp 'RPAR'
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 7
+state 7:  items:    Exp -> 'LPAR' Exp . 'RPAR'
+    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (explicit left 9999):   shift 8
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 8:  items:    Exp -> 'LPAR' Exp 'RPAR' . 
+  actions:    action 'EOF' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'LET' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'IN' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'SUM' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'PROD' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'MAX' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'ARGMAX' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'TO' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'OF' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'TIMES' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'PLUS' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'MINUS' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'LPAR' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'RPAR' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'EQ' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'VAR' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'INT' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'error' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action '#' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action '$$' (explicit left 9999):   reduce Exp --> 'LPAR' Exp 'RPAR'
+  immediate action:   reduce Exp --> 'LPAR' Exp 'RPAR'  gotos:state 9:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp 'PLUS' Exp . 
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+  actions:    action 'EOF' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'LET' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'IN' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'SUM' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'PROD' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'MAX' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'ARGMAX' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'TO' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'OF' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'MINUS' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'LPAR' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'RPAR' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'EQ' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'VAR' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'INT' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action 'error' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action '#' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+    action '$$' (explicit left 9997):   reduce Exp --> Exp 'PLUS' Exp
+  immediate action: <none>  gotos:state 10:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp 'MINUS' Exp . 
+    Exp -> Exp . 'TIMES' Exp
+  actions:    action 'EOF' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'LET' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'IN' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'SUM' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'PROD' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'MAX' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'ARGMAX' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'TO' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'OF' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'MINUS' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'LPAR' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'RPAR' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'EQ' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'VAR' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'INT' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action 'error' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action '#' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+    action '$$' (explicit left 9997):   reduce Exp --> Exp 'MINUS' Exp
+  immediate action: <none>  gotos:state 11:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> Exp 'TIMES' Exp . 
+  actions:    action 'EOF' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'LET' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'IN' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'SUM' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'PROD' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'MAX' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'ARGMAX' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'TO' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'OF' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'TIMES' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'PLUS' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'MINUS' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'LPAR' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'RPAR' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'EQ' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'VAR' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'INT' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action 'error' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action '#' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+    action '$$' (explicit left 9998):   reduce Exp --> Exp 'TIMES' Exp
+  immediate action: <none>  gotos:state 12:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'LET' 'VAR' 'EQ' Exp . 'IN' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   shift 32
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 13:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'LET' 'VAR' 'EQ' Exp 'IN' Exp . 
+  actions:    action 'EOF' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'LET' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'IN' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'SUM' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'PROD' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'MAX' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'ARGMAX' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'TO' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'OF' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'RPAR' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'EQ' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'VAR' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'INT' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action 'error' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action '#' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+    action '$$' (explicit nonassoc 9996):   reduce Exp --> 'LET' 'VAR' 'EQ' Exp 'IN' Exp
+  immediate action: <none>  gotos:state 14:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'SUM' 'VAR' 'EQ' Exp . 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   shift 36
+    action 'OF' (noprec):   error
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 15:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp . 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   shift 37
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 16:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp . 
+  actions:    action 'EOF' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'LET' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'IN' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'SUM' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'PROD' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'MAX' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'ARGMAX' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TO' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'OF' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'RPAR' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'EQ' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'VAR' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'INT' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'error' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '#' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '$$' (explicit nonassoc 9996):   reduce Exp --> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  immediate action: <none>  gotos:state 17:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'PROD' 'VAR' 'EQ' Exp . 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   shift 41
+    action 'OF' (noprec):   error
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 18:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp . 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   shift 42
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 19:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp . 
+  actions:    action 'EOF' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'LET' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'IN' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'SUM' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'PROD' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'MAX' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'ARGMAX' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TO' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'OF' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'RPAR' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'EQ' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'VAR' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'INT' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'error' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '#' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '$$' (explicit nonassoc 9996):   reduce Exp --> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  immediate action: <none>  gotos:state 20:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'MAX' 'VAR' 'EQ' Exp . 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   shift 46
+    action 'OF' (noprec):   error
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 21:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp . 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   shift 47
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 22:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp . 
+  actions:    action 'EOF' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'LET' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'IN' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'SUM' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'PROD' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'MAX' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'ARGMAX' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TO' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'OF' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'RPAR' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'EQ' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'VAR' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'INT' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'error' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '#' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '$$' (explicit nonassoc 9996):   reduce Exp --> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  immediate action: <none>  gotos:state 23:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'ARGMAX' 'VAR' 'EQ' Exp . 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   shift 51
+    action 'OF' (noprec):   error
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 24:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp . 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   shift 52
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 25:  items:    Exp -> Exp . 'PLUS' Exp
+    Exp -> Exp . 'MINUS' Exp
+    Exp -> Exp . 'TIMES' Exp
+    Exp -> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp . 
+  actions:    action 'EOF' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'LET' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'IN' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'SUM' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'PROD' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'MAX' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'ARGMAX' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TO' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'OF' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'TIMES' (explicit left 9998):   shift 28
+    action 'PLUS' (explicit left 9997):   shift 26
+    action 'MINUS' (explicit left 9997):   shift 27
+    action 'LPAR' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'RPAR' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'EQ' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'VAR' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'INT' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action 'error' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '#' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+    action '$$' (explicit nonassoc 9996):   reduce Exp --> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  immediate action: <none>  gotos:state 26:  items:    Exp -> Exp 'PLUS' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 9
+state 27:  items:    Exp -> Exp 'MINUS' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 10
+state 28:  items:    Exp -> Exp 'TIMES' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 11
+state 29:  items:    Exp -> 'LET' . 'VAR' 'EQ' Exp 'IN' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 30
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 30:  items:    Exp -> 'LET' 'VAR' . 'EQ' Exp 'IN' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   shift 31
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 31:  items:    Exp -> 'LET' 'VAR' 'EQ' . Exp 'IN' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 12
+state 32:  items:    Exp -> 'LET' 'VAR' 'EQ' Exp 'IN' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 13
+state 33:  items:    Exp -> 'SUM' . 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 34
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 34:  items:    Exp -> 'SUM' 'VAR' . 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   shift 35
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 35:  items:    Exp -> 'SUM' 'VAR' 'EQ' . Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 14
+state 36:  items:    Exp -> 'SUM' 'VAR' 'EQ' Exp 'TO' . Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 15
+state 37:  items:    Exp -> 'SUM' 'VAR' 'EQ' Exp 'TO' Exp 'OF' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 16
+state 38:  items:    Exp -> 'PROD' . 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 39
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 39:  items:    Exp -> 'PROD' 'VAR' . 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   shift 40
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 40:  items:    Exp -> 'PROD' 'VAR' 'EQ' . Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 17
+state 41:  items:    Exp -> 'PROD' 'VAR' 'EQ' Exp 'TO' . Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 18
+state 42:  items:    Exp -> 'PROD' 'VAR' 'EQ' Exp 'TO' Exp 'OF' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 19
+state 43:  items:    Exp -> 'MAX' . 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 44
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 44:  items:    Exp -> 'MAX' 'VAR' . 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   shift 45
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 45:  items:    Exp -> 'MAX' 'VAR' 'EQ' . Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 20
+state 46:  items:    Exp -> 'MAX' 'VAR' 'EQ' Exp 'TO' . Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 21
+state 47:  items:    Exp -> 'MAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 22
+state 48:  items:    Exp -> 'ARGMAX' . 'VAR' 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 49
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 49:  items:    Exp -> 'ARGMAX' 'VAR' . 'EQ' Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   error
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   error
+    action 'PROD' (noprec):   error
+    action 'MAX' (noprec):   error
+    action 'ARGMAX' (noprec):   error
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (noprec):   error
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   shift 50
+    action 'VAR' (noprec):   error
+    action 'INT' (noprec):   error
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:state 50:  items:    Exp -> 'ARGMAX' 'VAR' 'EQ' . Exp 'TO' Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 23
+state 51:  items:    Exp -> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' . Exp 'OF' Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 24
+state 52:  items:    Exp -> 'ARGMAX' 'VAR' 'EQ' Exp 'TO' Exp 'OF' . Exp
+  actions:    action 'EOF' (noprec):   error
+    action 'LET' (noprec):   shift 29
+    action 'IN' (noprec):   error
+    action 'SUM' (noprec):   shift 33
+    action 'PROD' (noprec):   shift 38
+    action 'MAX' (noprec):   shift 43
+    action 'ARGMAX' (noprec):   shift 48
+    action 'TO' (noprec):   error
+    action 'OF' (noprec):   error
+    action 'TIMES' (noprec):   error
+    action 'PLUS' (noprec):   error
+    action 'MINUS' (noprec):   error
+    action 'LPAR' (explicit left 9999):   shift 6
+    action 'RPAR' (noprec):   error
+    action 'EQ' (noprec):   error
+    action 'VAR' (noprec):   shift 5
+    action 'INT' (noprec):   shift 4
+    action 'error' (noprec):   error
+    action '#' (noprec):   error
+    action '$$' (noprec):   error
+  immediate action: <none>  gotos:    goto Exp: 25
+
+startStates = 0
+------------------------
